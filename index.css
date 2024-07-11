@@ -1,64 +1,45 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: sans-serif, 'Yu-gothic';
-  }
+body{
+  background-color: black;
+  color: white;
+}
+.first-header{
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+  text-align: center;
+  text-transform: uppercase;
+
+ 
+}
+
+.first-container{
+   max-width: 200px;
+  border: 1px solid white;
+font-family: "Archivo Narrow", sans-serif;
   
-  .header{
-    text-align: center;
-    
-  }
-  
-  .first-row {
-      display: flex;
-      justify-content: center;
-      background-color: grey;
-      height: 600px;
-  }
-  
-  
-  .javascript {
-      display: flex;
-      flex-direction: column;
-      background-color: black;
-      align-items: center;
-      text-align: center;
-      border: 1px solid white;
-      width: 400px;
-  
-  }
-  
-  .class-title {
-    margin-right: 40px;
-     margin-left: 40px;
-  }
-  
-  .class-counter {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    width: 20px;
-  }
-  
-  .project-counter {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    width: 20px;
-  }
-  .maestry-indicator {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
-    width: 20px;
-  color: red;
-    background-color: red;
-  }
-  
-  
-  .observations {
-      
-  
-  background-color: white;
-  }
-  
+}
+
+.class-counter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.maestry-color{
+  background-color: red;
+}
+
+.js-logo{
+  background-color: yellow;
+  color: black;
+}
+
+.projects-counter{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
