@@ -16,7 +16,12 @@ body{
    max-width: 200px;
   border: 1px solid white;
 font-family: "Archivo Narrow", sans-serif;
+padding: 25px;
   
+}
+
+.javascript-img{
+  max-width: 50px;
 }
 
 .class-counter{

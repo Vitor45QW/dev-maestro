@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const buttonMore = document.querySelector('.more-button');
-
+    console.log("text git")
     // Load saved value from local storage
     if (localStorage.getItem("endResult")) {
         document.querySelector(".target").textContent = localStorage.getItem("endResult");
     }
 
     buttonMore.addEventListener("click", () => {
+        console.log("button clicked")
         let rawResult = document.querySelector(".target");
         let endResult = parseInt(rawResult.textContent);
 
