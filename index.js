@@ -1,33 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const buttonMore = document.querySelector('.more-button');
-    console.log("text git")
-    // Load saved value from local storage
-    if (localStorage.getItem("endResult")) {
-        document.querySelector(".target").textContent = localStorage.getItem("endResult");
-    }
 
-    buttonMore.addEventListener("click", () => {
-        console.log("button clicked")
-        let rawResult = document.querySelector(".target");
-        let endResult = parseInt(rawResult.textContent);
+    const addButtons = document.querySelectorAll('.add-button');
+    const minusButtons = document.querySelectorAll('minus-button');
+    let targetValue = document.querySelectorAll('.target');
 
-        endResult += 1;
-        rawResult.textContent = endResult;
 
-        // Save the updated value to local storage
-        localStorage.setItem("endResult", endResult);
+    targetValue.forEach(target => {
+        if (!target.textContent || isNaN(parseInt(target.textContent))) {
+            const targetRaw = target.textContent = '0';
+            console.log(targetRaw);
+        }
     });
-});
 
-const buttonLess = document.querySelector('.less-button');
 
-buttonLess.addEventListener("click", () => {
-    let rawResult = document.querySelector(".target");
-    let endResult = parseInt(rawResult.textContent);
+    addButtons.forEach((addButton, index) => {
+        addButton.addEventListener("click", () => {
+           let target = targetValue[index];
 
-    endResult -= 1;
-    rawResult.textContent = endResult;
+           let currentValue = parseInt(target.textContent) ||0;
+            target.textContent = currentValue + 1;
+            console.log('new value', target.textContent);
 
-    // Save the updated value to local storage
-    localStorage.setItem("endResult", endResult);
-});
+        })
+    })
+
+    minusButtons.forEach((minusButton, index) => {
+        minusButton.addEventListener("click", () => {
+            console.log("minus clicked")
+        })
+    })
+
+
+
+})

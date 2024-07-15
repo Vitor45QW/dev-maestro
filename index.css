@@ -1,50 +1,59 @@
-body{
-  background-color: black;
-  color: white;
+body {
+  background-color: #1a1a1a; /* Dark gray background */
+  color: #ffffff; /* White text */
+  font-family: "Arial", sans-serif; /* Common font family */
+  line-height: 1.6; /* Improved readability */
 }
-.first-header{
+
+.first-header {
   font-family: "IBM Plex Mono", monospace;
-  font-weight: 100;
-  font-style: normal;
+  font-weight: 300; /* Slightly heavier font weight */
   text-align: center;
   text-transform: uppercase;
-
- 
+  letter-spacing: 2px; /* Increased letter spacing */
+  margin-top: 20px; /* Added margin for spacing */
 }
 
-.first-container{
-   max-width: 200px;
-  border: 1px solid white;
-font-family: "Archivo Narrow", sans-serif;
-padding: 25px;
-  
+.first-container {
+  max-width: 600px; /* Increased max-width for better content presentation */
+  border: 2px solid #ffffff; /* Thicker border with white color */
+  font-family: "Archivo Narrow", sans-serif;
+  padding: 30px;
+  margin: 20px auto; /* Centering the container horizontally */
+  background-color: #333333; /* Darker background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
 }
 
-.javascript-img{
-  max-width: 50px;
+.javascript-img {
+  max-width: 60px; /* Slightly larger image */
 }
 
-.class-counter{
+.class-counter, .projects-counter {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Changed to column layout for better flow */
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  margin-top: 20px; /* Added margin for spacing */
+  background-color: #444444; /* Dark gray background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-.maestry-color{
-  background-color: red;
+.maestry-color {
+  background-color: #ff6347; /* Coral color */
+  color: #ffffff; /* White text on coral background */
+  padding: 10px 20px; /* Increased padding */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase;
 }
 
-.js-logo{
-  background-color: yellow;
-  color: black;
-}
-
-.projects-counter{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
+.js-logo {
+  background-color: #ffd700; /* Gold color */
+  color: #000000; /* Black text on gold background */
+  padding: 8px 16px; /* Increased padding */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-transform: uppercase;
 }
