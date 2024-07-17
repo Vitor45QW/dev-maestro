@@ -5,12 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let targetValue = document.querySelectorAll('.target');
 
 
+    
+
     targetValue.forEach(target => {
         if (!target.textContent || isNaN(parseInt(target.textContent))) {
             const targetRaw = target.textContent = '0';
             console.log(targetRaw);
         }
     });
+
+    if (parseInt(targetValue.textContent) == 5){
+
+        console.log("if working")
+        console.log("Dont give up!")
+    }
+  
+
 
 
     addButtons.forEach((addButton, index) => {

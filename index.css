@@ -57,3 +57,19 @@ body {
   font-weight: bold; /* Bold text */
   text-transform: uppercase;
 }
+
+.whatever{
+  border-bottom: solid white 1px;
+}
+
+.links-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.links{
+  color: white;
+  justify-content: center;
+  text-align: center;
+  border-width: 0.5px;
+}
