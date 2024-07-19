@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const minusButtons = document.querySelectorAll('minus-button');
     let targetValue = document.querySelectorAll('.target');
 
-
+    console.log(targetValue.textContent)
     
 
     targetValue.forEach(target => {
@@ -14,12 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    if (parseInt(targetValue.textContent) == 5){
-
-        console.log("if working")
-        console.log("Dont give up!")
-    }
-  
 
 
 
@@ -30,6 +24,17 @@ document.addEventListener("DOMContentLoaded", () => {
            let currentValue = parseInt(target.textContent) ||0;
             target.textContent = currentValue + 1;
             console.log('new value', target.textContent);
+            
+            
+    if (parseInt(target.textContent) == 5){
+        
+        let maestry = document.querySelector('.maestry');
+        
+        maestry.textContent = 'keep working';
+        maestry.style.backgroundColor = 'green';
+        maestry.style.color = 'white';
+    }   
+  
 
         })
     })
