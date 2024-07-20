@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 body {
   background-color: #1a1a1a; /* Dark gray background */
   color: #ffffff; /* White text */
@@ -28,7 +37,7 @@ body {
   max-width: 60px; /* Slightly larger image */
 }
 
-.class-counter, .projects-counter {
+.class-counter{
   display: flex;
   flex-direction: row; /* Changed to column layout for better flow */
   align-items: center;
@@ -40,6 +49,13 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
+.projects{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .maestry{
   background-color: #ff6347; /* Coral color */
   color: #ffffff; /* White text on coral background */
@@ -47,6 +63,11 @@ body {
   border-radius: 4px; /* Rounded corners */
   font-weight: bold; /* Bold text */
   text-transform: uppercase;
+}
+
+.meastry.firstup{
+  color: green;
+  background-color: black;
 }
 
 .js-logo {
@@ -72,4 +93,48 @@ body {
   justify-content: center;
   text-align: center;
   border-width: 0.5px;
+}
+
+.minus-button{
+    background-color: red;
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 27px; /* Adjust font size as needed */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.minus-button:hover {
+    background-color: darkred; /* Darker shade of red on hover */
+}
+
+/* Optional: Adjust if you need different styles for active state */
+.minus-button:active {
+    background-color: maroon; /* Darker shade of red when clicked */
+}
+
+.add-button{
+    background-color: green;
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-size: 27px; /* Adjust font size as needed */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: darkgreen; /* Darker shade of red on hover */
+}
+
+/* Optional: Adjust if you need different styles for active state */
+.add-button:active {
+    background-color: green; /* Darker shade of red when clicked */
+}
+
+.target{
+  font-size: 60px;
 }
