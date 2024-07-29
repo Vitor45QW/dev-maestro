@@ -1,140 +1,77 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 body {
-  background-color: #1a1a1a; /* Dark gray background */
-  color: #ffffff; /* White text */
-  font-family: "Arial", sans-serif; /* Common font family */
-  line-height: 1.6; /* Improved readability */
+  background-color: #1a1a1a; 
+  color: #ffffff; 
+  font-family: "Arial", sans-serif; 
+  line-height: 1.6; 
+  text-transform: uppercase;
 }
 
 .first-header {
   font-family: "IBM Plex Mono", monospace;
-  font-weight: 300; /* Slightly heavier font weight */
+  font-weight: 300; 
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 2px; /* Increased letter spacing */
-  margin-top: 20px; /* Added margin for spacing */
-}
+  letter-spacing: 2px; 
+  margin-top: 20px; 
 
-.first-container {
-  max-width: 600px; /* Increased max-width for better content presentation */
-  border: 2px solid #ffffff; /* Thicker border with white color */
+#study-container{
+  max-width: 600px; 
+  border: 2px solid #ffffff; 
   font-family: "Archivo Narrow", sans-serif;
   padding: 30px;
-  margin: 20px auto; /* Centering the container horizontally */
-  background-color: #333333; /* Darker background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
-}
-
-.javascript-img {
-  max-width: 60px; /* Slightly larger image */
+  margin: 20px auto; 
+  background-color: #333333; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: center;
 }
 
 .class-counter{
   display: flex;
-  flex-direction: row; /* Changed to column layout for better flow */
+  flex-direction: row; 
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  margin-top: 20px; /* Added margin for spacing */
-  background-color: #444444; /* Dark gray background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-top: 20px; 
+  background-color: #444444; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-
-.projects{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.maestry{
-  background-color: #ff6347; /* Coral color */
-  color: #ffffff; /* White text on coral background */
-  padding: 10px 20px; /* Increased padding */
-  border-radius: 4px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase;
-}
-
-.meastry.firstup{
-  color: green;
-  background-color: black;
-}
-
-.js-logo {
-  background-color: #ffd700; /* Gold color */
-  color: #000000; /* Black text on gold background */
-  padding: 8px 16px; /* Increased padding */
-  border-radius: 4px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase;
-}
-
-.whatever{
-  border-bottom: solid white 1px;
-}
-
-.links-container{
-  display: flex;
-  flex-direction: column;
-}
-
-.links{
-  color: white;
-  justify-content: center;
-  text-align: center;
-  border-width: 0.5px;
-}
-
-.minus-button{
+#minus-button{
     background-color: red;
-    color: white; /* Text color */
+    color: white; 
     border: none;
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 27px; /* Adjust font size as needed */
-    border-radius: 50%; /* Make it circular */
+    padding: 10px 20px;
+    font-size: 27px; 
+    border-radius: 50%; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.minus-button:hover {
-    background-color: darkred; /* Darker shade of red on hover */
+#minus-button:hover {
+    background-color: darkred; 
 }
 
-/* Optional: Adjust if you need different styles for active state */
-.minus-button:active {
-    background-color: maroon; /* Darker shade of red when clicked */
+
+#minus-button:active {
+    background-color: maroon; 
 }
 
-.add-button{
+#add-button{
     background-color: green;
-    color: white; /* Text color */
+    color: white; 
     border: none;
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-size: 27px; /* Adjust font size as needed */
-    border-radius: 50%; /* Make it circular */
+    padding: 10px 20px; 
+    font-size: 27px; 
+    border-radius: 50%; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.add-button:hover {
-    background-color: darkgreen; /* Darker shade of red on hover */
+#add-button:hover {
+    background-color: darkgreen; 
 }
 
-/* Optional: Adjust if you need different styles for active state */
-.add-button:active {
-    background-color: green; /* Darker shade of red when clicked */
-}
 
-.target{
-  font-size: 60px;
+#add-button:active {
+    background-color: green; 
 }
