@@ -1,53 +1,84 @@
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM fully loaded and parsed");
 
-    const addButtons = document.querySelectorAll('.add-button');
-    const minusButtons = document.querySelectorAll('.minus-button');
-    let targetValue = document.querySelectorAll('.target');
-  
+    const topicButtons = document.querySelectorAll('.topic-button');
+    const topicTitle = document.getElementById('topic-title');
+    const topicDescription = document.getElementById('topic-description');
+    const famousApplicationsTitle = document.getElementById('famous-applications-title');
+    const famousApplicationsList = document.getElementById('famous-applications');
+    const addButton = document.getElementById('add-button');
+    const minusButton = document.getElementById('minus-button');
 
-
-    targetValue.forEach(target => {
-        if (!target.textContent || isNaN(parseInt(target.textContent))) {
-            const targetRaw = target.textContent = '0';
-            console.log(targetRaw);
+    const topics = {
+        javascript: {
+            title: "Why use JavaScript?",
+            description: "JavaScript is a versatile language used for both client-side and server-side programming.",
+            famousApplicationsTitle: "Famous applications that use JavaScript:",
+            famousApplications: ["Google", "Facebook", "Netflix"]
+        },
+        react: {
+            title: "Why use React?",
+            description: "React is a popular library for building user interfaces, especially single-page applications.",
+            famousApplicationsTitle: "Famous applications that use React:",
+            famousApplications: ["Facebook", "Instagram", "WhatsApp"]
         }
+       
+    };
+
+    targetValue = 0;
+
+  addButton.addEventListener("click", () => {
+    console.log("more");
+    let target = document.getElementById('target');
+    
+      targetValue += 1; 
+      target.textContent = targetValue;
+     
+  })      
+
+minusButton.addEventListener("click", () => {
+    console.log("minus");
+    let target = document.getElementById('target');
+    
+      targetValue -= 1; 
+      target.textContent = targetValue;
+     
+  })      
+
+  
+    topicButtons.forEach(button => {
+        console.log("Adding event listener to button:", button);
+        button.addEventListener("click", () => {
+            const topic = button.getAttribute('data-topic');
+            console.log("Button clicked, topic:", topic);
+            loadTopicContent(topic);
+        });
     });
-  
-   
-  
 
+    function loadTopicContent(topic) {
+        console.log("Loading content for topic:", topic);
+        if (topics[topic]) {
+            const content = topics[topic];
+            topicTitle.textContent = content.title;
+            topicDescription.textContent = content.description;
+            famousApplicationsTitle.textContent = content.famousApplicationsTitle;
+            famousApplicationsList.innerHTML = '';
+            content.famousApplications.forEach(app => {
+                const li = document.createElement('li');
+                li.textContent = app;
+                famousApplicationsList.appendChild(li);
+            });
+            console.log("Content loaded for topic:", topic);
+        } else {
+            console.error("Topic not found:", topic);
+        }
+    }
 
-    addButtons.forEach((addButton, index) => {
-        addButton.addEventListener("click", () => {
-           let target = targetValue[index];
+    
+    loadTopicContent('javascript');
 
-           let currentValue = parseInt(target.textContent) ||0;
-            target.textContent = currentValue + 1;
-            console.log('new value', target.textContent);
-              
-            
-            if (parseInt(target.textContent) === 5) {
-               let maestry = document.querySelector('.maestry');
-              
-              maestry.textContent= 'Keep working';
-              maestry.style.backgroundColor = 'black';
-              maestry.style.color= 'green';
-      
-              maestry.style.animation = 'fadeIn 1s ease-out';
-            }
-            
-        })
-    })
+});
 
-    minusButtons.forEach((minusButton, index) => {
-        minusButton.addEventListener("click", () => {
-            let target = targetValue[index];
-            
-             let currentValue = parseInt(target.textContent) ||0;
-            target.textContent = currentValue - 1;
-            console.log('new value', target.textContent);
-        })
-    })
 
 
 })
