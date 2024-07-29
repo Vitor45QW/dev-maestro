@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="index.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Maestro!</title>
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
  
@@ -13,69 +13,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   
-    <title>Classmarker</title>
+  
 </head>
 <body>
-  
-<div class="first-header">
+
+  <div class="first-header">
   <h1>Class tracker</h1>
   <p>Follow your progress, get imparcial feedback for evolution and manage your classes</p>
-<div>
+</div>
 
-
-  <div class="first-container">
-    <h1>Javascript</h1>
-    
-    <img class="javascript-img" src="/logos/javascript logo.png">
-
-    <h2>Classes<h2>
+  
+  
+    <div id="study-container">
+        <h1 id="topic-title"></h1>
+         
+        <p id="topic-description"></p>
+          <h2>Classes<h2>
 
       <div class="class-counter">
-        <button class="minus-button">-</button>
-        <h2 class="target"></h2>
-        <button class="add-button">+</button>
+        <button id="minus-button">-</button>
+        <h2 id="target"></h2>
+        <button id="add-button">+</button>
       </div>
       
       <p>Maestry on this content:<p>
       <p class="maestry">Extremely low</p>
   
-    <div class="projects">
-        <p>Put here the projects you've made with this language or framework!</p>
-        <input type="text" placeholder"here">
-        <button class="add-projects">add</button>
-      </div>
-      
-      <div>
-        <h2 class="whatever">Why learn JavaScript?</h2>
-        <p>1. JavaScript enables dynamic content that interacts with users. For example, it powers animations, form validations, and interactive maps.</p>
-        <p>2. JavaScript can be used for front-end (via frameworks like React, Angular, and Vue.js) and back-end development (via Node.js).</p>
-        <p>3. JavaScript has a vast ecosystem of libraries and frameworks, making it easier to develop complex applications quickly.</p>
-      </div>
+        <h2 id="famous-applications-title"></h2>
+        <h3 id="famous-applications"></h3>
 
-      <div>
-        <h2>Famous aplications that use Javascript</h2>
-        <p>Netflix</p>
-        <p>Uber</p>
-        <p>Facebook</p>
-        <p>Twitter</p>
-        <p>Whatsapp Web</p>
-        <p>Spotify</p>
-        <p>Google Maps</p>
-        <p>Linkedin</p>
-      </div>
-
-
-      
-      <div class="links-container">
-      <a class="links" href="https://www.udemy.com/courses/search/?src=ukw&q=javascript" target="_blank">Learn more!</a>
-      <a class="links" href="https://www.udemy.com/courses/search/?src=ukw&q=javascript" target="_blank">Learn more!</a>
-      <a class="links" href="https://www.udemy.com/courses/search/?src=ukw&q=javascript" target="_blank">Learn more!</a>
-      </div>
-      
-      
-      
     
-  </div>
-  <script src="index.js"></script>
+
+    </div>
+
+    <button class="topic-button" data-topic="javascript">JavaScript</button>
+    <button class="topic-button" data-topic="react">React</button>
+    <!-- Add more buttons as needed -->
+
+    <script src="index.js"></script>
 </body>
 </html>
+
