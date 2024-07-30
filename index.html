@@ -20,6 +20,9 @@
   <div class="first-header">
   <h1>Class tracker</h1>
   <p>Follow your progress, get imparcial feedback for evolution and manage your classes</p>
+
+    <button class="topic-button" data-topic="javascript">JavaScript</button>
+    <button class="topic-button" data-topic="react">React</button>
 </div>
 
   
@@ -32,13 +35,23 @@
 
       <div class="class-counter">
         <button id="minus-button">-</button>
-        <h2 id="target"></h2>
+        <h2 id="target">0</h2>
         <button id="add-button">+</button>
       </div>
       
+      <div class="maestry-field">
       <p>Maestry on this content:<p>
       <p class="maestry">Extremely low</p>
-  
+      </div>      
+            <div class="level-container">
+            <h2>Performace level :</h2>
+            <h2 id="user-level">Low<h2>
+              </div>  
+              
+              <h1>Projects on your level</h1>
+            <h2 id="recomended-projects">Console log a string</h2>
+            
+            
         <h2 id="famous-applications-title"></h2>
         <h3 id="famous-applications"></h3>
 
@@ -46,11 +59,10 @@
 
     </div>
 
-    <button class="topic-button" data-topic="javascript">JavaScript</button>
-    <button class="topic-button" data-topic="react">React</button>
     <!-- Add more buttons as needed -->
 
     <script src="index.js"></script>
 </body>
 </html>
+
 
