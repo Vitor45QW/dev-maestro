@@ -8,7 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const famousApplicationsList = document.getElementById('famous-applications');
     const addButton = document.getElementById('add-button');
     const minusButton = document.getElementById('minus-button');
-
+    const maestry = document.querySelector('.maestry');
+    const recomendedProjects = document.getElementById('recomended-projects');
+    const userLevel = document.getElementById('user-level')
+  
     const topics = {
         javascript: {
             title: "Why use JavaScript?",
@@ -22,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             famousApplicationsTitle: "Famous applications that use React:",
             famousApplications: ["Facebook", "Instagram", "WhatsApp"]
         }
-       
+        // Add more topics as needed
     };
 
     targetValue = 0;
@@ -33,8 +36,47 @@ document.addEventListener("DOMContentLoaded", () => {
     
       targetValue += 1; 
       target.textContent = targetValue;
-     
+      
+      
+        if (targetValue === 1) {
+                maestry.style.animationName = "flashGreen";
+                maestry.style.animationDuration = "2.5s"; // Duration of the animation
+                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
+                maestry.style.animationFillMode = "forwards";
+                maestry.textContent = "Congratulations for starting!";
+            }
+  
+       else if (targetValue === 5) {
+                maestry.style.animationName = "darkBlack";
+                maestry.style.animationDuration = "2.5s"; // Duration of the animation
+                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
+                
+                maestry.textContent = "creating habits take time. move on";
+            }
+    
+          else if(targetValue === 10) {
+              maestry.textContent = "dont forget to pratice with projects"
+              maestry.style.backgroundColor = "black"; // Set background color to black
+              userLevel.textContent = "low-beginner"
+              userLevel.style.animation = 'shake 1s ease';
+            recomendedProjects.textContent = "to do list"
+              
+          }
+    
+    
+    
+            else {
+                maestry.style.animationName = "darkRed";
+                maestry.style.animationDuration = "2.5s"; // Duration of the animation
+                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
+                maestry.style.animationFillMode = "forwards";
+                maestry.textContent = "maestry still low"
+            }
+        
   })      
+
+
+        
 
 minusButton.addEventListener("click", () => {
     console.log("minus");
@@ -42,7 +84,7 @@ minusButton.addEventListener("click", () => {
     
       targetValue -= 1; 
       target.textContent = targetValue;
-     
+      
   })      
 
   
@@ -74,11 +116,8 @@ minusButton.addEventListener("click", () => {
         }
     }
 
-    
+    // Load default topic (optional)
     loadTopicContent('javascript');
 
 });
 
-
-
-})
