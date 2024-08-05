@@ -1,123 +1,103 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM fully loaded and parsed");
 
-    const topicButtons = document.querySelectorAll('.topic-button');
-    const topicTitle = document.getElementById('topic-title');
-    const topicDescription = document.getElementById('topic-description');
-    const famousApplicationsTitle = document.getElementById('famous-applications-title');
-    const famousApplicationsList = document.getElementById('famous-applications');
     const addButton = document.getElementById('add-button');
     const minusButton = document.getElementById('minus-button');
     const maestry = document.querySelector('.maestry');
     const recomendedProjects = document.getElementById('recomended-projects');
-    const userLevel = document.getElementById('user-level')
-  
-    const topics = {
+    const userLevel = document.getElementById('user-level');
+    const targetDisplay = document.getElementById('target');
+
+    let topics = {
         javascript: {
             title: "Why use JavaScript?",
             description: "JavaScript is a versatile language used for both client-side and server-side programming.",
             famousApplicationsTitle: "Famous applications that use JavaScript:",
-            famousApplications: ["Google", "Facebook", "Netflix"]
+            famousApplications: ["Google", "Facebook", "Netflix"],
+            classes: 0
         },
         react: {
             title: "Why use React?",
             description: "React is a popular library for building user interfaces, especially single-page applications.",
             famousApplicationsTitle: "Famous applications that use React:",
-            famousApplications: ["Facebook", "Instagram", "WhatsApp"]
+            famousApplications: ["Facebook", "Instagram", "WhatsApp"],
+            classes: 0
+        },
+        database: {
+            title: "Why Learn database?",
+            description: "Proficiency in databases is highly valued across various industries.",
+            famousApplicationsTitle: "Famous applications that use databases:",
+            famousApplications: ["Amazon", "Netflix", "Spotify"],
+            classes: 0
         }
-        // Add more topics as needed
     };
 
-    targetValue = 0;
+    let currentTopic = 'javascript'; // Default topic
 
-  addButton.addEventListener("click", () => {
-    console.log("more");
-    let target = document.getElementById('target');
-    
-      targetValue += 1; 
-      target.textContent = targetValue;
-      
-      
-        if (targetValue === 1) {
-                maestry.style.animationName = "flashGreen";
-                maestry.style.animationDuration = "2.5s"; // Duration of the animation
-                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
-                maestry.style.animationFillMode = "forwards";
-                maestry.textContent = "Congratulations for starting!";
-            }
-  
-       else if (targetValue === 5) {
-                maestry.style.animationName = "darkBlack";
-                maestry.style.animationDuration = "2.5s"; // Duration of the animation
-                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
-                
-                maestry.textContent = "creating habits take time. move on";
-            }
-    
-          else if(targetValue === 10) {
-              maestry.textContent = "dont forget to pratice with projects"
-              maestry.style.backgroundColor = "black"; // Set background color to black
-              userLevel.textContent = "low-beginner"
-              userLevel.style.animation = 'shake 1s ease';
-            recomendedProjects.textContent = "to do list"
-              
-          }
-    
-    
-    
-            else {
-                maestry.style.animationName = "darkRed";
-                maestry.style.animationDuration = "2.5s"; // Duration of the animation
-                maestry.style.animationTimingFunction = "ease"; // Optional: timing function
-                maestry.style.animationFillMode = "forwards";
-                maestry.textContent = "maestry still low"
-            }
-        
-  })      
+    addButton.addEventListener("click", () => {
+        console.log("more");
 
+        if (topics[currentTopic]) {
+            topics[currentTopic].classes += 1;
+            updateMaestry(topics[currentTopic].classes);
+        }
+    });
 
-        
+    minusButton.addEventListener("click", () => {
+        console.log("minus");
 
-minusButton.addEventListener("click", () => {
-    console.log("minus");
-    let target = document.getElementById('target');
-    
-      targetValue -= 1; 
-      target.textContent = targetValue;
-      
-  })      
+        if (topics[currentTopic]) {
+            topics[currentTopic].classes -= 1;
+            updateMaestry(topics[currentTopic].classes);
+        }
+    });
 
-  
+    function updateMaestry(classes) {
+        if (classes === 1) {
+            maestry.textContent = "Congratulations for starting!";
+        } else if (classes === 5) {
+            maestry.textContent = "Creating habits take time. Move on.";
+        } else if (classes === 10) {
+            maestry.textContent = "Don't forget to practice with projects.";
+            maestry.style.backgroundColor = "black";
+            userLevel.textContent = "Low-beginner";
+            userLevel.style.animation = 'shake 1s ease';
+            recomendedProjects.textContent = "To do list";
+        } else {
+            maestry.textContent = "Mastery still low.";
+        }
+
+        targetDisplay.textContent = classes;
+    }
+
+    const topicButtons = document.querySelectorAll('.topic-button');
     topicButtons.forEach(button => {
-        console.log("Adding event listener to button:", button);
         button.addEventListener("click", () => {
-            const topic = button.getAttribute('data-topic');
-            console.log("Button clicked, topic:", topic);
-            loadTopicContent(topic);
+            currentTopic = button.getAttribute('data-topic');
+            targetDisplay.textContent = topics[currentTopic].classes; // Update displayed value
+            loadTopicContent(currentTopic);
         });
     });
 
     function loadTopicContent(topic) {
-        console.log("Loading content for topic:", topic);
-        if (topics[topic]) {
-            const content = topics[topic];
-            topicTitle.textContent = content.title;
-            topicDescription.textContent = content.description;
-            famousApplicationsTitle.textContent = content.famousApplicationsTitle;
+        const content = topics[topic];
+        if (content) {
+            document.getElementById('topic-title').textContent = content.title;
+            document.getElementById('topic-description').textContent = content.description;
+            document.getElementById('famous-applications-title').textContent = content.famousApplicationsTitle;
+            const famousApplicationsList = document.getElementById('famous-applications');
             famousApplicationsList.innerHTML = '';
             content.famousApplications.forEach(app => {
                 const li = document.createElement('li');
                 li.textContent = app;
                 famousApplicationsList.appendChild(li);
             });
-            console.log("Content loaded for topic:", topic);
         } else {
             console.error("Topic not found:", topic);
         }
     }
 
-    // Load default topic (optional)
-    loadTopicContent('javascript');
-
+    loadTopicContent(currentTopic); // Load default topic content on page load
 });
+
 
