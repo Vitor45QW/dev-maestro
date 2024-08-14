@@ -1,17 +1,51 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+
+@keyframes flashGreen {
+
+  
+  50% {
+    background-color: darkgreen; /* Color during the animation */
   }
   100% {
-    opacity: 1;
+    background-color: green; /* Ending color (same as the starting color) */
   }
 }
 
+@keyframes darkRed {
+  50%
+  {background-color: darkred;}
+  100%{
+    background-color: red;
+  }
+
+}
+
+@keyframes darkBlack {
+    0% {
+        background-color: darkgray; /* Starting color */
+    }
+    50% {
+        background-color: black; /* Color during the animation */
+    }
+    100% {
+        background-color: lightblack; /* Ending color */
+    }
+}
+
+
 body {
-  background-color: #1a1a1a; /* Dark gray background */
-  color: #ffffff; /* White text */
-  font-family: "Arial", sans-serif; /* Common font family */
-  line-height: 1.6; /* Improved readability */
+  background-color: #1a1a1a; 
+  color: #ffffff; 
+  font-family: "Arial", sans-serif; 
+  line-height: 1.6; 
+  text-transform: uppercase;
 }
 
 .first-header {
@@ -23,18 +57,15 @@ body {
   margin-top: 20px; /* Added margin for spacing */
 }
 
-.first-container {
-  max-width: 600px; /* Increased max-width for better content presentation */
-  border: 2px solid #ffffff; /* Thicker border with white color */
+#study-container{
+  max-width: 1000px; 
+  border: 2px solid #ffffff; 
   font-family: "Archivo Narrow", sans-serif;
   padding: 30px;
-  margin: 20px auto; /* Centering the container horizontally */
-  background-color: #333333; /* Darker background color */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
-}
-
-.javascript-img {
-  max-width: 60px; /* Slightly larger image */
+  margin: 20px auto; 
+  background-color: #333333; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  text-align: center;
 }
 
 .class-counter{
@@ -48,54 +79,7 @@ body {
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
-
-.projects{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
-.maestry{
-  background-color: #ff6347; /* Coral color */
-  color: #ffffff; /* White text on coral background */
-  padding: 10px 20px; /* Increased padding */
-  border-radius: 4px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase;
-}
-
-.meastry.firstup{
-  color: green;
-  background-color: black;
-}
-
-.js-logo {
-  background-color: #ffd700; /* Gold color */
-  color: #000000; /* Black text on gold background */
-  padding: 8px 16px; /* Increased padding */
-  border-radius: 4px; /* Rounded corners */
-  font-weight: bold; /* Bold text */
-  text-transform: uppercase;
-}
-
-.whatever{
-  border-bottom: solid white 1px;
-}
-
-.links-container{
-  display: flex;
-  flex-direction: column;
-}
-
-.links{
-  color: white;
-  justify-content: center;
-  text-align: center;
-  border-width: 0.5px;
-}
-
-.minus-button{
+#minus-button{
     background-color: red;
     color: white; /* Text color */
     border: none;
@@ -106,16 +90,16 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.minus-button:hover {
+#minus-button:hover {
     background-color: darkred; /* Darker shade of red on hover */
 }
 
 /* Optional: Adjust if you need different styles for active state */
-.minus-button:active {
+#minus-button:active {
     background-color: maroon; /* Darker shade of red when clicked */
 }
 
-.add-button{
+#add-button{
     background-color: green;
     color: white; /* Text color */
     border: none;
@@ -126,15 +110,33 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.add-button:hover {
+#add-button:hover {
     background-color: darkgreen; /* Darker shade of red on hover */
 }
 
 /* Optional: Adjust if you need different styles for active state */
-.add-button:active {
+#add-button:active {
     background-color: green; /* Darker shade of red when clicked */
 }
 
-.target{
-  font-size: 60px;
+.level-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: blue;
+}
+
+#user-level{
+  padding: 60px;
+}
+
+.maestry-field{
+  margin: 150px;
+}
+
+
+.maestry{
+  background-color: darkred;
 }
