@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const recomendedProjects = document.getElementById('recomended-projects');
     const userLevel = document.getElementById('user-level');
     const targetDisplay = document.getElementById('target');
-    const topicImage = document.getElementById('topic-image');
 
     let topics = {
         javascript: {
@@ -15,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "JavaScript is a versatile language used for both client-side and server-side programming.",
             famousApplicationsTitle: "Famous applications that use JavaScript:",
             famousApplications: ["Google", "Facebook", "Netflix"],
-            classes: 0,
-            image: "logos/javascript.png"
+            classes: 0
         },
         react: {
             title: "Why use React?",
@@ -34,12 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Load saved progress from localStorage
-    const savedTopics = JSON.parse(localStorage.getItem('topics'));
-    if (savedTopics) {
-        topics = savedTopics;
-    }
-
     let currentTopic = 'javascript'; // Default topic
 
     addButton.addEventListener("click", () => {
@@ -48,17 +40,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (topics[currentTopic]) {
             topics[currentTopic].classes += 1;
             updateMaestry(topics[currentTopic].classes);
-            saveProgress(); // Save progress to localStorage
         }
     });
 
     minusButton.addEventListener("click", () => {
         console.log("minus");
 
-        if (topics[currentTopic] && topics[currentTopic].classes > 0) {
+        if (topics[currentTopic]) {
             topics[currentTopic].classes -= 1;
             updateMaestry(topics[currentTopic].classes);
-            saveProgress(); // Save progress to localStorage
         }
     });
 
@@ -107,13 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-
-    
-
-    function saveProgress() {
-        localStorage.setItem('topics', JSON.stringify(topics));
-    }
-
     loadTopicContent(currentTopic); // Load default topic content on page load
-    targetDisplay.textContent = topics[currentTopic].classes; // Update displayed value
 });
+
+
